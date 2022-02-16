@@ -55,8 +55,6 @@ const main = function() {
     };
     const layout = createLayout(graph.ngraph, physicsSettings);
 
-    console.log(layout);
-
     const container = new PIXI.Container();
     app.stage.addChild(container);
     const cw = app.renderer.width * 0.8;
@@ -71,16 +69,30 @@ const main = function() {
         const vpos = layout.getNodePosition(v);
 
         const graphics = new PIXI.Graphics();
-        graphics.lineStyle(2, 0xFFFFFF, 1);
+        graphics.lineStyle(2, 0x0000FF, 1);
         graphics.beginFill(0xFFFFFF, 1);
-        graphics.drawCircle(0, 0, 10);
+        graphics.drawCircle(0, 0, 20);
         graphics.endFill();
         container.addChild(graphics);
+        const text = new PIXI.Text(v, {
+            fontFamily: 'Arial',
+            fontSize: 20,
+            fill: 0x000000,
+            align: 'center'
+        });
+        // graphics.zIndex = -1;
+        // text.zIndex = -2;
+        graphics.addChild(text);
+        text.x = -text.width / 2;
+        text.y = -text.height / 2;
         graph.vg[v] = graphics;
     }
 
     const lines = new PIXI.Container();
+    container.sortableChildren = true;
     container.addChild(lines);
+    container.zIndex = 0;
+    lines.zIndex = -1;
 
     app.ticker.add((delta) => {
         layout.step();
