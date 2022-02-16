@@ -15,5 +15,9 @@ module.exports = {
     port: 8080
   },
   plugins: [
-  ]
+  ],
+  watchOptions: {
+    aggregateTimeout: 200,
+    poll: 1000,
+  },
 };
