@@ -1,0 +1,19 @@
+{
+  "name": "graph-theory-playground",
+  "version": "1.0.0",
+  "description": "Experimental Graph Theory Playground",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emnh/graph-theory-playground.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emnh/graph-theory-playground/issues"
+  },
+  "homepage": "https://github.com/emnh/graph-theory-playground#readme"
+}
